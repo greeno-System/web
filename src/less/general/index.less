@@ -1,0 +1,70 @@
+// main: ../all.less
+
+.navigation--wrapper {
+    display: inline-block;
+    background: transparent;
+    padding: 30px;
+
+    width: 350px;
+    height: 100%;
+}
+
+.navigation--container {
+    background-color: @navigation--background-color;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 3px 5px 20px rgba(0, 0, 0, 0.1);
+
+    height: 100%;
+
+    .navigation--head {
+        background-color: @accent-color;
+        color: #FFFFFF;
+        text-align: center;
+        background-image: url('../img/lol.png');
+        background-position: center;
+        background-size: 150%;
+        background-repeat: no-repeat;
+
+        height: 160px;
+        font-weight: 400;
+        font-size: 37px;
+        letter-spacing: 6px;
+    }
+}
+
+.navigation--entry {
+    position: relative;
+    width: 100%;
+    background-color: transparent;
+    transition: background-color 0.2s;
+    cursor: pointer;
+
+    .navigation--icon {
+        height: 80px;
+        width: 80px;
+        display: inline-block;
+    }
+
+    .navigation--name {
+        width: calc(100% - 84px);
+        padding-top: 25px;
+        padding-bottom: 25px;
+        color: #4B4B4B;
+        font-size: 29px;
+        display: inline-block;
+        vertical-align: top;
+        font-weight: 100;
+    }
+
+    .navigation--entry-seperator {
+        margin-left: 20px;
+        margin-right: 20px;
+        background-color: @accent-color;
+        height: 1px;
+    }
+
+    &:hover {
+        background-color: #f0f0f0;
+    }
+}
