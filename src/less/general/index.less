@@ -1,7 +1,7 @@
 // main: ../all.less
 
 .navigation--wrapper {
-    display: inline-block;
+    display: inline-table;
     background: transparent;
     padding: 30px;
 
@@ -44,6 +44,13 @@
         height: 80px;
         width: 80px;
         display: inline-block;
+        transition: color 0.2s;
+
+        .icon {
+            font-size: 50px;
+            display: inline-block;
+            padding-top: 10px;
+        }
     }
 
     .navigation--name {
@@ -51,6 +58,7 @@
         padding-top: 25px;
         padding-bottom: 25px;
         color: #4B4B4B;
+        transition: color 0.2s;
         font-size: 29px;
         display: inline-block;
         vertical-align: top;
@@ -66,5 +74,52 @@
 
     &:hover {
         background-color: #f0f0f0;
+    }
+
+    &.is--active {
+        .navigation--name, .navigation--icon {
+            color: darken(@accent-color, 20%);
+        }
+    }
+}
+
+.content--wrapper {
+    display: inline-table;
+    padding: 30px;
+    vertical-align: top;
+    height: 100%;
+    width: ~"calc(100% - 474px)";
+    overflow-y: scroll;
+
+    .content--header {
+        color: @accent-color;
+        font-weight: 700;
+        padding-bottom: 5px;
+        border-bottom: 2px solid darken(@body--background-color, 5%);
+        
+        .header--headline {
+            font-size: 48px;
+        }
+
+        .header--subline {
+            font-size: 24px;
+            padding-left: 10px;
+            margin-left: 5px;
+            position: relative;
+
+            &:before {
+                content: '';
+                position: absolute;
+                height: 100%;
+                width: 2px;
+                background: @accent-color;
+                top: 0;
+                left: 0;
+            }
+        }
+    }
+
+    .content--container {
+        margin-top: 20px;
     }
 }

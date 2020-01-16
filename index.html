@@ -8,61 +8,88 @@
     <title>greeno - web</title>
 </head>
 <body>
+    <script src="https://vuejs.org/js/vue.js"></script>
     <div class="page--wrap">
-        <div class="navigation--wrapper">
+        <div class="navigation--wrapper" id="navigation">
             <div class="navigation--container">
                 <div class="navigation--head">
                 </div>
                 <div class="navigation--body">
-                    <div class="navigation--entry">
+                    <div class="navigation--entry" v-for="(navigationItem, index) in navigationItems" :key="index"
+                        v-on:click="changeCategory(index)" v-bind:class="{ 'is--active' : navigationItem.active }">
                         <div class="navigation--entry-content">
                             <div class="navigation--icon">
-    
+                                    <i class="icon icon-bug"></i>
                             </div>
                             <div class="navigation--name">
-                                Dashboard
+                                {{ navigationItem.navigationName }}
                             </div>
                         </div>
                         <div class="navigation--entry-seperator"></div>
-                    </div>
-                    <div class="navigation--entry">
-                        <div class="navigation--entry-content">
-                            <div class="navigation--icon">
-    
-                            </div>
-                            <div class="navigation--name">
-                                Setup
-                            </div>
-                        </div>
-                        <div class="navigation--entry-seperator"></div>
-                    </div>
-                    <div class="navigation--entry">
-                        <div class="navigation--entry-content">
-                            <div class="navigation--icon">
-    
-                            </div>
-                            <div class="navigation--name">
-                                Komponenten
-                            </div>
-                        </div>
-                        <div class="navigation--entry-seperator"></div>
-                    </div>
-                    <div class="navigation--entry">
-                        <div class="navigation--entry-content">
-                            <div class="navigation--icon">
-    
-                            </div>
-                            <div class="navigation--name">
-                                Status
-                            </div>
-                        </div>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="content--wrapper">
 
+        <div class="content--wrapper">
+            <div class="content--header" id="content-header">
+                <span class="header--headline">{{ category.main }}</span>
+                <span class="header--subline">{{ category.sub }}</span>
+            </div>
+            <div class="content--container">
+
+            </div>
         </div>
+
+        <script>
+        var contentHeader = new Vue({
+            el: '#content-header',
+            data: {
+                category: {
+                    main: 'Dashboard',
+                    sub: 'Start'
+                }
+            },
+        });
+        
+        var navigation = new Vue({
+            el: '#navigation',
+            data: {
+                navigationItems: [
+                    {
+                        navigationIcon: '<i class="icon-bug"></i>',
+                        navigationName: 'Dashboard',
+                        active: true
+                    }, {
+                        navigationIcon: '<i class="icon-bug"></i>',
+                        navigationName: 'Setup',
+                        active: false
+                    }, {
+                        navigationIcon: '<i class="icon-bug"></i>',
+                        navigationName: 'Komponenten',
+                        active: false
+                    }, {
+                        navigationIcon: '<i class="icon-bug"></i>',
+                        navigationName: 'Status',
+                        active: false
+                    }
+                ],
+                activeIndex: 0
+            },
+            methods: {
+                changeCategory: function(index) {
+                    if (index != this.activeIndex) {
+                        this.navigationItems[index].active = true;
+                        contentHeader.$data.category.main  = this.navigationItems[index].navigationName;
+    
+                        this.navigationItems[this.activeIndex].active = false;
+                        this.activeIndex                              = index;
+                    }
+                }
+            },
+        });
+        </script>
+        </script>
     </div>
 </body>
 </html>
