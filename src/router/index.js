@@ -10,7 +10,8 @@ const routes = [
         name: 'dashboard',
         component: PageView,
         meta: {
-            title: 'Dashboard'
+            title: 'Dashboard',
+            subtitle: 'Version'
         }
     }, {
         path: '/setup',
@@ -32,6 +33,13 @@ const routes = [
         component: PageView,
         meta: {
             title: 'Status'
+        }
+    }, {
+        path: '/debug',
+        name: 'debug',
+        component: PageView,
+        meta: {
+            title: 'Debug'
         }
     }
 ]

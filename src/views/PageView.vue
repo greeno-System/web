@@ -2,10 +2,10 @@
     <div class="content--wrapper">
         <div class="content--header" id="content-header">
             <span class="header--headline">{{ $route.meta.title }}</span>
-            <span class="header--subline">TestSubline</span>
+            <span class="header--subline">{{ $route.meta.subtitle }}</span>
         </div>
         <div class="content--container">
-
+            <h3>Version</h3>
         </div>
     </div>
 </template>

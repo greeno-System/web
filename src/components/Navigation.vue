@@ -8,7 +8,7 @@
                     <router-link :to="{ name: route.routeName }">
                         <div class="navigation--entry-content" >
                             <div class="navigation--icon">
-                                <i class="icon {{ route.routeIcon }}"></i>
+                                <i :class="route.routeIcon"></i>
                             </div>
                             <div class="navigation--name">
                                 {{ route.routeDisplay }}
@@ -30,19 +30,23 @@
                     {
                         routeDisplay: 'Dashboard',
                         routeName: 'dashboard',
-                        routeIcon: 'icon-home'
+                        routeIcon: 'icon icon-home'
                     }, {
                         routeDisplay: 'Setup',
                         routeName: 'setup',
-                        routeIcon: 'icon-home'
+                        routeIcon: 'icon icon-settings-greeno'
                     }, {
                         routeDisplay: 'Komponenten',
                         routeName: 'components',
-                        routeIcon: 'icon-home'
+                        routeIcon: 'icon icon-settings'
                     }, {
                         routeDisplay: 'Status',
                         routeName: 'state',
-                        routeIcon: 'icon-home'
+                        routeIcon: 'icon icon-chat'
+                    }, {
+                        routeDisplay: 'Debug',
+                        routeName: 'debug',
+                        routeIcon: 'icon icon-bug'
                     },
                 ]
             }
