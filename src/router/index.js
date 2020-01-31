@@ -42,6 +42,14 @@ const routes = [
         meta: {
             title: 'Debug'
         }
+    }, {
+        path: '*',
+        name: '404',
+        component: PageView,
+        meta: {
+            title: 'Not found',
+            component: 'NotFound'
+        }
     }
 ]
 
