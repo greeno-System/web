@@ -4,7 +4,7 @@
             <a class="card--headline">Informationen</a>
         </div>
         <div class="card--content">
-            <div class="information--column" :v-for="deviceInformation">
+            <div class="information--column" v-for="(information, index) in deviceInformation" :key="index">
                 <b>{{ information.label }}: </b>{{ information.value }}
             </div>
         </div>
