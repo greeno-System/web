@@ -5,21 +5,27 @@
             <span class="header--subline">{{ $route.meta.subtitle }}</span>
         </div>
         <div class="content--container">
-            <h3>Version</h3>
+            <component :is="$route.meta.component" />
         </div>
     </div>
 </template>
 
 <script>
+    import Dashboard from '@/components/Dashboard.vue'
+
     export default {
-        name: 'PageView'
+        name: 'PageView',
+        components: {
+            Dashboard
+        }
     }
 </script>
 
 <style lang="less">
-@body--background-color: #E5E5E5;
-@navigation--background-color: #FFFFFF;
-@accent-color: #6FCF97;
+    @body--background-color: #E5E5E5;
+    @navigation--background-color: #FFFFFF;
+    @accent-color: #6FCF97;
+
     .content--wrapper {
         display: inline-table;
         padding: 30px;

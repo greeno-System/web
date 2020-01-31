@@ -11,7 +11,8 @@ const routes = [
         component: PageView,
         meta: {
             title: 'Dashboard',
-            subtitle: 'Version'
+            subtitle: 'Version',
+            component: 'Dashboard'
         }
     }, {
         path: '/setup',
@@ -48,5 +49,9 @@ const router = new VueRouter({
     mode: 'history',
     routes
 })
+
+router.afterEach((to) => {
+    document.title = 'greeno | ' + to.meta.title;
+});
 
 export default router
