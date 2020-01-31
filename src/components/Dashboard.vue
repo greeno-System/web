@@ -18,7 +18,7 @@
         data() {
             return {
                 deviceInformation: '',
-                path: 'localhost:8000/core/info',
+                path: 'http://localhost:8000/core/info',
             };
         },
         methods: {
