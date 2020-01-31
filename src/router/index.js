@@ -11,7 +11,7 @@ const routes = [
         component: PageView,
         meta: {
             title: 'Dashboard',
-            subtitle: 'Version',
+            subtitle: 'Übersicht',
             component: 'Dashboard'
         }
     }, {
