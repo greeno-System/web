@@ -1,7 +1,8 @@
 <template>
     <div class="dashboard--card">
         <div class="card--headline">
-            <a class="card--headline">Informationen</a>
+            <a>Informationen</a>
+            <a v-on:click="getDeviceInformation()" class="information--refresh">&#128260;</a>
         </div>
         <div class="card--content">
             <div class="information--column" v-for="(information, index) in deviceInformation" :key="index">
@@ -46,6 +47,7 @@
         background: #fff;
         padding: 20px;
         border-radius: 10px;
+        position: relative;
 
         .card--headline {
             padding-bottom: 10px;
@@ -54,6 +56,12 @@
             a {
                 font-weight: bolder;
                 font-size: 28px;
+            }
+
+            .information--refresh {
+                cursor: pointer;
+                position: absolute;
+                right: 20px;
             }
         }
 
