@@ -1,7 +1,7 @@
 <template>
     <div>
         <DashboardCard v-for="(dashboardCard, index) in dashboardCards" :key="index"
-            :cardHeadline="dashboardCard.headline" :cardEndpoint="dashboardCard.endpoint" />
+            :cardHeadline="dashboardCard.headline" :cardEndpoint="dashboardCard.endpoint" :cardType="dashboardCard.type"/>
     </div>
 </template>
 
@@ -25,7 +25,14 @@
             }
         },
         created() {
-            this.getDashboardCards();
+            // this.getDashboardCards();
+            this.dashboardCards = [
+               {
+                   'headline': 'Testgraph',
+                   'endpoint': 'roflcopter',
+                   'type': 'graph'
+               } 
+            ]
         },
         components: {
             DashboardCard
