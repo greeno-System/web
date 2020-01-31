@@ -58,6 +58,7 @@
         border-radius: 10px;
         position: relative;
         margin: 0 20px 20px 0;
+        vertical-align: middle;
 
         .card--headline {
             padding-bottom: 10px;
