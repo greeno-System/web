@@ -25,7 +25,7 @@
             getDeviceInformation() {
                 axios.get(this.path)
                     .then((res) => {
-                        this.deviceInformation = res.data;
+                        this.deviceInformation = res.data.data;
                     });
             },
         },
