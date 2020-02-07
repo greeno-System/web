@@ -1,6 +1,6 @@
 <template>
     <div class="dashboard--card">
-        
+
         <!-- Headline -->
         <div class="card--headline">
             <a class="headline">{{ cardHeadline }}</a>
@@ -64,6 +64,7 @@
         methods: {
             refreshInformation() {
                 this.loading = true;
+                this.error   = false;
 
                 // Fetch new informations
                 axios.get('http://localhost:8000/' + this.cardEndpoint)
