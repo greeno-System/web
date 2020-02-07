@@ -70,7 +70,9 @@
                 axios.get('http://localhost:8000/' + this.cardEndpoint)
                     .then((res) => {
                         this.cardInformation = res.data.data;
+                        this.loading         = false;
                     }).catch((error) => {
+                        this.loading      = false;
                         this.error        = true;
                         this.errorMessage = error;
                     });
@@ -79,7 +81,6 @@
                     this.$refs.graph.renderGraph()
                 }
 
-                this.loading = false;
             },
             close() {
                 this.error = false;
