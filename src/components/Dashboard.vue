@@ -25,14 +25,7 @@
             }
         },
         created() {
-            // this.getDashboardCards();
-            this.dashboardCards = [
-               {
-                   'headline': 'Testgraph',
-                   'endpoint': 'roflcopter',
-                   'type': 'graph'
-               } 
-            ]
+            this.getDashboardCards();
         },
         components: {
             DashboardCard
