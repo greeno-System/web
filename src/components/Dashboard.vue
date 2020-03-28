@@ -35,4 +35,5 @@
 </script>
 
 <style lang="less" scoped>
+    @import "../assets/styles/all.less";
 </style>

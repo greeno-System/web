@@ -29,20 +29,13 @@ const routes = [
             title: 'Komponenten'
         }
     }, {
-        path: '/state',
-        name: 'state',
+        path: '/system',
+        name: 'system',
         component: PageView,
         meta: {
-            title: 'Status'
+            title: 'System-Einstellungen'
         }
-    }, {
-        path: '/debug',
-        name: 'debug',
-        component: PageView,
-        meta: {
-            title: 'Debug'
-        }
-    }, {
+    },{
         path: '*',
         name: '404',
         component: PageView,
