@@ -1,0 +1,103 @@
+.dashboard--card {
+    display: inline-block;
+    background: rgb(255, 255, 255);
+    padding: 20px;
+    border-radius: 10px;
+    position: relative;
+    margin: 0 20px 20px 0;
+    vertical-align: middle;
+    box-shadow: 3px 5px 20px rgba(0, 0, 0, 0.1);
+    transition: 0.4s box-shadow;
+
+    .card--headline {
+        padding-bottom: 10px;
+        border-bottom: 1px solid @body--background-color;
+
+        a {
+            font-weight: bolder;
+            font-size: 28px;
+        }
+
+        .headline {
+            margin-right: 33px;
+            color: @headline-text-color;
+        }
+
+        .information--refresh {
+            cursor: pointer;
+            position: absolute;
+            right: 20px;
+            transition: 0.1s transform;
+            user-select: none;
+
+            &:active {
+                transform: scale(0.95);
+            }
+        }
+    }
+
+    .card--content {
+        padding-top: 10px;
+        position: relative;
+        min-width: 230px;
+        color: @text-color;
+
+        .card--loading, .card--error {
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.7);
+
+            &:before {
+                position: absolute;
+                top: 50%;
+                width: 100%;
+                text-align: center;
+                content: '\1F6AB';
+                font-size: 27px;
+            }
+        }
+
+        .card--loading {
+            &:before {
+                position: absolute;
+                top: 50%;
+                width: 100%;
+                text-align: center;
+                content: '\23F3';
+                font-size: 27px;
+
+                animation:pulse 1s ease-in-out infinite alternate;
+            }
+        }
+
+        .card--error {
+            cursor: pointer;
+
+            a {
+                width: 100%;
+                text-align: center;
+                top: 60%;
+                color: rgb(255, 0, 0);
+                font-weight: bold;
+                position: absolute;
+            }
+        }
+    }
+
+    @keyframes pulse { 0% {opacity: 0;}100% { opacity: 1; } }
+
+    &:hover {
+        box-shadow: 6px 10px 20px rgba(0, 0, 0, 0.1)
+    }
+
+    .fade-enter-active,
+    .fade-leave-active {
+        transition: opacity .5s
+    }
+
+    .fade-enter,
+    .fade-leave-to {
+        opacity: 0
+    }
+}
